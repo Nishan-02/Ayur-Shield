@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Light Mode (Default) - Sandalwood/Beige */
+    --bg-primary: #080601;
+    /* Warm white */
+    --bg-secondary: #372d0363;
+    /* Amber-100 */
+    --text-primary: #e7e5e4;
+    /* Stone-200 (Light for Dark BG) */
+    --text-secondary: #a8a29e;
+    /* Stone-400 */
+    --accent-emerald: #056043;
+    --accent-gold: #392208;
+  }
+
+  .dark {
+    /* Dark Mode - Deep Forest */
+    --bg-primary: #0c0a09;
+    /* Stone-950 */
+    --bg-secondary: #102e22;
+    /* Ayur-Green */
+    --text-primary: #2c1002;
+    /* Stone-200 */
+    --text-secondary: #391903;
+    /* Stone-400 */
+  }
+
+  body {
+    @apply bg-[var(--bg-primary)] text-[var(--text-primary)] antialiased transition-colors duration-500;
+    font-family: 'Inter', sans-serif;
+    overflow-x: hidden;
+  }
+
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-stone-900;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-emerald-800 rounded-full hover:bg-emerald-700;
+  }
+}
+
+@layer components {
+  .glass-panel {
+    @apply bg-white/70 dark:bg-stone-900/60 backdrop-blur-md border border-stone-200 dark:border-stone-800 shadow-xl transition-colors duration-500;
+  }
+
+  .input-field {
+    @apply w-full bg-white/50 dark:bg-stone-900/50 border border-stone-200 dark:border-stone-800 rounded-xl px-4 py-3 text-[var(--text-primary)] placeholder-stone-400 dark:placeholder-stone-500 focus:outline-none focus:ring-2 focus:ring-emerald-600 transition-all;
+  }
+
+  .btn-primary {
+    @apply bg-gradient-to-r from-emerald-600 to-teal-500 hover:from-emerald-500 hover:to-teal-400 text-white font-bold py-3 px-6 rounded-xl shadow-lg shadow-emerald-900/20 dark:shadow-emerald-900/40 transition-all transform hover:scale-[1.02] active:scale-95;
+  }
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+.floating-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: rgba(74, 222, 128, 0.2);
+  border-radius: 50%;
+  animation: float 15s infinite linear;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(100vh) translateX(0);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    transform: translateY(-100px) translateX(20px);
+    opacity: 0;
+  }
+}
