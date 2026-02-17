@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
     "target": "ES2022",
-    "experimentalDecorators": true,
-    "useDefineForClassFields": false,
+    "experimentalDecorators": true, // Enabled for legacy support if needed
+    "useDefineForClassFields": true, // Changed to true for standard compliance
     "module": "ESNext",
     "lib": [
       "ES2022",
@@ -14,7 +14,7 @@
       "node"
     ],
     "moduleResolution": "bundler",
-    "isolatedModules": true,
+    "isolatedModules": true, // Required for bundler
     "moduleDetection": "force",
     "allowJs": true,
     "jsx": "react-jsx",
@@ -23,7 +23,17 @@
         "./*"
       ]
     },
-    "allowImportingTsExtensions": true,
-    "noEmit": true
-  }
+    // "allowImportingTsExtensions": true, // Removed as it can cause issues in some setups, rely on bundler
+    "noEmit": true,
+    "strict": true, // Added for better type safety in the root project
+    "esModuleInterop": true
+  },
+  "include": [
+    "."
+  ],
+  "exclude": [
+    "node_modules",
+    "AyurShield",
+    "dist"
+  ]
 }

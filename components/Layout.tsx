@@ -1,7 +1,7 @@
 
 import React from 'react';
 import { User } from '../types';
-import AyurBot from './AyurBot';
+// import AyurBot from './AyurBot';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -37,8 +37,8 @@ const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTab, user
               key={tab.id}
               onClick={() => setActiveTab(tab.id)}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-lg transition-all ${activeTab === tab.id
-                  ? 'bg-ayur-sage text-ayur-primary-dark font-semibold'
-                  : 'text-ayur-charcoal hover:bg-ayur-cream'
+                ? 'bg-ayur-sage text-ayur-primary-dark font-semibold'
+                : 'text-ayur-charcoal hover:bg-ayur-cream'
                 }`}
             >
               <span className="text-lg">{tab.icon}</span>
@@ -94,8 +94,8 @@ const Layout: React.FC<LayoutProps> = ({ children, activeTab, setActiveTab, user
         </div>
       </main>
 
-      {/* Floating AyurBot */}
-      <AyurBot user={user || undefined} />
+      {/* Floating AyurBot - Temporarily disabled for debugging */}
+      {/* <AyurBot user={user || undefined} /> */}
     </div>
   );
 };

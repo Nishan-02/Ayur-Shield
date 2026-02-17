@@ -1,32 +1,43 @@
 /* AyurShield - Ayurvedic Herbal Branding Color Palette */
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
 :root {
   /* Primary Colors */
-  --color-primary: #6B7A1E;           /* Primary Green */
-  --color-primary-dark: #2F4F2F;     /* Secondary Deep Green */
-  --color-accent: #C46A2B;            /* Accent Turmeric Orange */
-  
+  --color-primary: #6B7A1E;
+  /* Primary Green */
+  --color-primary-dark: #2F4F2F;
+  /* Secondary Deep Green */
+  --color-accent: #C46A2B;
+  /* Accent Turmeric Orange */
+
   /* Background Colors */
-  --color-bg-cream: #F4F1E8;          /* Background Cream */
-  --color-bg-sage: #DCE6C2;           /* Soft Sage Background */
-  
+  --color-bg-cream: #F4F1E8;
+  /* Background Cream */
+  --color-bg-sage: #DCE6C2;
+  /* Soft Sage Background */
+
   /* Text Colors */
-  --color-text-dark: #1E1E1E;         /* Text Dark Charcoal */
-  --color-text-light: #F7F7F7;        /* Text Light Off-White */
-  
+  --color-text-dark: #1E1E1E;
+  /* Text Dark Charcoal */
+  --color-text-light: #F7F7F7;
+  /* Text Light Off-White */
+
   /* Derived Colors for UI States */
-  --color-primary-light: #8A9A3E;     /* Lighter primary for hover */
-  --color-primary-lighter: #A8B86E;   /* Even lighter for backgrounds */
-  --color-accent-light: #D88A4B;      /* Lighter accent for hover */
-  --color-accent-lighter: #E5A876;    /* Even lighter accent */
-  
+  --color-primary-light: #8A9A3E;
+  /* Lighter primary for hover */
+  --color-primary-lighter: #A8B86E;
+  /* Even lighter for backgrounds */
+  --color-accent-light: #D88A4B;
+  /* Lighter accent for hover */
+  --color-accent-lighter: #E5A876;
+  /* Even lighter accent */
+
   /* Border Colors */
-  --color-border: #D4D0C4;            /* Subtle border from cream */
-  --color-border-sage: #C8D6A8;       /* Border from sage */
+  --color-border: #D4D0C4;
+  /* Subtle border from cream */
+  --color-border-sage: #C8D6A8;
+  /* Border from sage */
 }
 
 /* Base Styles */
@@ -41,54 +52,58 @@ body {
   .text-primary {
     color: var(--color-primary);
   }
-  
+
   .text-primary-dark {
     color: var(--color-primary-dark);
   }
-  
+
   .text-accent {
     color: var(--color-accent);
   }
-  
+
   .bg-primary {
     background-color: var(--color-primary);
   }
-  
+
   .bg-primary-dark {
     background-color: var(--color-primary-dark);
   }
-  
+
   .bg-accent {
     background-color: var(--color-accent);
   }
-  
+
   .bg-cream {
     background-color: var(--color-bg-cream);
   }
-  
+
   .bg-sage {
     background-color: var(--color-bg-sage);
   }
-  
+
   .border-primary {
     border-color: var(--color-primary);
   }
-  
+
   .border-sage {
     border-color: var(--color-border-sage);
   }
-  
+
   .hover\:bg-primary-light:hover {
     background-color: var(--color-primary-light);
   }
-  
+
   .hover\:bg-accent-light:hover {
     background-color: var(--color-accent-light);
   }
 }
 
 /* Smooth transitions for all interactive elements */
-button, a, input, select, textarea {
+button,
+a,
+input,
+select,
+textarea {
   transition: all 0.2s ease-in-out;
 }
 
